@@ -22,7 +22,7 @@ try:
     # 写入导出文件的头部
     fields = list(reader.fieldnames)
     if GENERATED_ID:
-        fields.append(GENERATED_ID)
+        fields.insert(0, GENERATED_ID)
     writer = csv.DictWriter(out_file, fields)
     writer.writeheader()
     # 分别对每一个区块数据按区域拆分为多个区块数据
